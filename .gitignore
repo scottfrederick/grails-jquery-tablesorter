@@ -1,0 +1,6 @@
+target
+out
+work
+plugins
+*.log
+web-app/WEB-INF/classes
