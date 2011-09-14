@@ -3,4 +3,6 @@ out
 work
 plugins
 *.log
+*.zip
+plugin.xml
 web-app/WEB-INF/classes
