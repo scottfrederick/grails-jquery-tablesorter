@@ -1,0 +1,11 @@
+The JQuery Tablesorter plugin provides in-place table sorting in a Grails application. 
+
+Columns in HTML tables can be made sortable easily and quickly using the JQuery [tablesorter plugin|http://tablesorter.com/]. Using the tablesorter plugin, tables are sorted in-place without requiring a partial or full page refresh. 
+
+h2. Paged and non-paged tables
+
+Grails includes a @<g:sortableColumn>@ tag which can be used to make table columns sortable in GSP views. This tag causes the page to  be refreshed with new table data. This works well with tables of paged data, since re-sorting a column in a paged table requires a different set of rows to be selected into the current page. 
+
+However, if an HTML table is not paged then the HTML page refresh is unnecessary. In this case, the built-in @<g:sortableColumn>@ tag can be replaced with tags from this plugin to allow the column sorting to be done in the browser using JavaScript. 
+
+By default, this plugin uses the same styles that Grails provides in the default @main.css@. Using these defaults, tables that are made sortable using this plugin will look like tables that are made sortable by the built-in @<g:sortableColumn>@ tag, so users of your site can interact with paged and non-paged tables in the same way. 

@@ -1,0 +1,7 @@
+If you are not using the Resources plugin (and, seriously, you should be), then the @<jqts:resources>@ tag is used to include the required JavaScript resources in an application. This tag can be placed in a Sitemesh layout file (e.g. main.gsp) or in individual GSP files. 
+
+{code}
+<jqts:resources/>
+{code}
+
+If the application is running in development mode, a non-minified version of the required JavaScript resources will be included. If not in development mode, and minified version is included.  

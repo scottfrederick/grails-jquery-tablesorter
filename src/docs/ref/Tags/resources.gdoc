@@ -1,0 +1,11 @@
+h1. jqts:resource Tag
+
+This tag causes all the required JavaScript resources to be included in GSP pages. It can be used in a Sitemesh layout file or in individual GPS files. 
+
+{code}
+<jqts:resources/>
+{code}
+
+If the application is running in development mode, a non-minified version of the required JavaScript resources will be included. If not in development mode, and minified version is included.
+
+If the application is using the Resources plugin, then this tag is converted to @<r:require module="jquery-tablesorter"/>@ or @<r:require module="jquery-tablesorter"/>@, depending on whether the application is running in development mode or not. 

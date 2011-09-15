@@ -1,0 +1,5 @@
+The jquery-tablesorter plugin is installed using the usual Grails plugin installation procedure: 
+
+{code}
+grails install-plugin jquery-tablesorter
+{code}

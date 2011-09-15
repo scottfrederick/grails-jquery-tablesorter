@@ -1,0 +1,1 @@
+There are two ways of including the necessary JavaScript resources into an application, depending on whether the application uses the Grails [Resources plugin|http://grails.org/plugin/resources] or not. 

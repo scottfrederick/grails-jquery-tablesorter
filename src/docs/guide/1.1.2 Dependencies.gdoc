@@ -1,0 +1,5 @@
+The jquery-tablesorter plugin requires the Grails jquery plugin. If you aren't already using the jquery plugin, install it into your application. Version 1.3.2 or greater of the Grails jquery plugin is required.
+
+{code}
+grails install-plugin jquery
+{code}
