@@ -3,11 +3,10 @@ grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 
 grails.project.dependency.resolution = {
-    // inherit Grails' default dependencies
     inherits("global") {
     }
 
-    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn"
     
     repositories {
         grailsPlugins()
@@ -16,7 +15,6 @@ grails.project.dependency.resolution = {
         mavenCentral()
     }
 
-    plugins {
-        compile ":jquery:1.3.2.1"
+    dependencies {
     }
 }
