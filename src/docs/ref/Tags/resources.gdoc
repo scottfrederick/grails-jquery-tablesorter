@@ -1,4 +1,6 @@
-h1. jqts:resource Tag
+h1. jqts:resource
+
+h2. Purpose
 
 This tag causes all the required JavaScript resources to be included in GSP pages. It can be used in a Sitemesh layout file or in individual GPS files. 
 

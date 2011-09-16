@@ -16,5 +16,5 @@ Alternatively, you can use the @<r:require>@ tag in a GSP or Sitemesh layout fil
 
 This plugin provides two versions of the necessary resources: 
 
-   * *jquery-tablesorter*: Minified versions of all required JavaScript, suitable for production
-   * *jquery-tablesorter-dev*: Non-minified version of required JavaScript, suitable for development and debugging
+   * @jquery-tablesorter@ - Minified versions of all required JavaScript, suitable for production
+   * @jquery-tablesorter-dev@ - Non-minified version of required JavaScript, suitable for development and debugging

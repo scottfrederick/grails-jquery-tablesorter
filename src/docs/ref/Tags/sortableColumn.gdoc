@@ -1,0 +1,13 @@
+h1. jqts:sortableColumn
+
+h2. Purpose
+
+The @<jqts:sortableColumn>@ tag is used in the header row of a sortable table. This tag does not effect the behavior of the table sorting; it only serves to style the header in a manner consistent with the @<g:sortableColumn>@ tag. If such styling is not a consideration, then HTML @<th>@ tags can be used instead of @<jqts:sortableColumn>@.
+
+h2. Attributes
+
+Attribute @title@ or @titleKey@ is required. When both attributes are specified then @titleKey@ takes precedence, resulting in the title caption being resolved against the message source. In case when the message could not be resolved, the @title@ will be used as title caption.
+
+   * @property@ (optional) - Not used, included for compatibility with @<g:sortableColumn>@
+   * @title@ (optional) - title caption for the column
+   * @titleKey@ (optional) - title key to use for the column, resolved against the message source
