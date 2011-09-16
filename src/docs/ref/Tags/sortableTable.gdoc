@@ -1,0 +1,26 @@
+h1. jqts:sortableTable
+
+h2. Purpose
+
+This tag introduces a table that is sortable using the tablesorter JQuery plugin. It is used in place of the HTML @<table>@ tag. It is required to make the Grails tablesorter plugin work. 
+
+h2. Attributes
+
+The following attributes are primarily passed through to the tablesorter JQuery plugin JavaScript calls. Additional details on the behavior of these attributes can be found with the [tablesorter documentation|http://tablesorter.com/docs/#Configuration]. 
+
+   * @cssAsc@ (optional) - The CSS style used to style the header when a column is sorted in ascending order. Default is 'asc', matching the style generated in the Grails default @main.css@.
+   * @cssDesc@ (optional) - The CSS style used to style the header when a column is sorted in descending order. Default is 'desc', matching the style generated in the Grails default @main.css@.
+   * @cssHeader@ (optional) - The CSS style used to style the header in its unsorted state. Default is 'sortable', matching the style generated in the Grails default @main.css@.
+   * @headers@ (optional) - A JavaScript object of instructions for per-column controls in the format: @headers: { 0: { option: setting }, ... }@. For example, to disable sorting on the first two columns of a table: @headers="{ 0: { sorter: false}, 1: {sorter: false} }"@. Default is to enable sorting on all columns. 
+   * @sortForce@ (optional) - A JavaScript array of instructions for adding a secondary sort that will be applied after a sort selection by the user. For example, to sort the second and third columns in ascending order after the user selects a different column for sorting, use: @sortForce="\[\[1,0\],\[2,0\]\]"@. Default is no secondary-sort columns.
+   * @sortList@ (optional) - A JavaScript array of instructions for per-column sorting and direction in the format: @\[\[columnIndex,sortDirection\], ...\]@, where columnIndex is a zero-based index for your columns left-to-right and sortDirection is 0 for ascending and 1 for descending. For example, to sort the first column ascending and then the second column descending use: @sortList="\[\[0,0\],\[1,1\]\]"@. Default is to sort the first column ascending.
+   * @textExtraction@ (optional) - Specifies the name of a JavaScript function used to extract data from table cells for sorting.
+
+The following attributes control other behavior of the Grails tag rendering for in-place table sorting. 
+   
+   * @id@ (required) - The HTML element ID of the table. 
+   * @cssEven@ (optional) - A CSS style used to style the even-numbered rows in the table if @zebraStripe="true"@. Default is 'even', matching the style generated in the Grails default @main.css@.
+   * @cssOdd@ (optional) - A CSS style used to style the odd-numbered rows in the table if @zebraStripe="true"@. Default is 'odd', matching the style generated in the Grails default @main.css@.
+   * @zebraStripe@ (optional) - Specifies whether CSS styles should be applied to alternating rows of the table after sorting. Default is @true@. _Note_: If @zebraStripe="false"@, table rows may have different styles applied if the Grails-generated view specifies the @even@ and @odd@ styles explicitly using a construct like @<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">@.
+
+

@@ -1,0 +1,48 @@
+When Grails generates list views for CRUD operations on a domain class, by default it uses the @<g:sortableColumn>@ tag on all column headers. If the rows of a table are paged, then this is probably the behavior you want. If the size of the data set is constrained to the point that row paging is not required and you would prefer to reduce page re-loads, then the generated view can easily be changed to support in-place sorting. 
+
+For example, for a domain class named @Trip@ with fields @name@, @city@, @startDate@, and @endDate@, Grails will generate a @list.gsp@ view containing a table structure like this: 
+
+{code}
+<table>
+  <thead>
+    <tr>
+      <g:sortableColumn property="name" title="${message(code: 'trip.name.label', default: 'Name')}"/>
+      <g:sortableColumn property="city" title="${message(code: 'trip.city.label', default: 'City')}"/>
+      <g:sortableColumn property="startDate" title="${message(code: 'trip.startDate.label', default: 'Start Date')}"/>
+      <g:sortableColumn property="endDate" title="${message(code: 'trip.endDate.label', default: 'End Date')}"/>
+    </tr>
+  </thead>
+  <tbody>
+    <g:each in="${tripInstanceList}" status="i" var="tripInstance">
+      <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+        <td><g:link action="show" id="${tripInstance.id}">${fieldValue(bean: tripInstance, field: "name")}</g:link></td>
+        <td>${fieldValue(bean: tripInstance, field: "city")}</td>
+        <td><g:formatDate date="${tripInstance.startDate}"/></td>
+        <td><g:formatDate date="${tripInstance.endDate}"/></td>
+      </tr>
+    </g:each>
+  </tbody>
+</table>
+{code} 
+
+To convert this view to use in-place table sorting, simply replace the HTML @<table>@ tag with @<jqts:sortableTable>@ and @<g:sortableColumn>@ with @<jqts:sortableColumn>@:
+
+{code}
+<jqts:sortableTable id="trips">
+  <thead>
+    <tr>
+      <jqts:sortableColumn property="name" title="${message(code: 'trip.name.label', default: 'Name')}"/>
+      <jqts:sortableColumn property="city" title="${message(code: 'trip.city.label', default: 'City')}"/>
+      <jqts:sortableColumn property="startDate" title="${message(code: 'trip.startDate.label', default: 'Start Date')}"/>
+      <jqts:sortableColumn property="endDate" title="${message(code: 'trip.endDate.label', default: 'End Date')}"/>
+    </tr>
+  </thead>
+  <tbody>
+    ....
+  </tbody>
+</table>
+{code}
+
+By default, all columns of the table are sortable. CSS styles are applied to column headers which are consistent with the styles generated in @main.css@, so the table should look the same to the user.
+
+The @<jqts:sortableTable>@ tag has several options for controlling the sorting behavior and appearance of each column.

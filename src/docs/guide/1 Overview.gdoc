@@ -1,6 +1,6 @@
 The JQuery Tablesorter plugin provides in-place table sorting in a Grails application. 
 
-Columns in HTML tables can be made sortable easily and quickly using the JQuery [tablesorter plugin|http://tablesorter.com/]. Using the tablesorter plugin, tables are sorted in-place without requiring a partial or full page refresh. 
+Columns in HTML tables can be made sortable easily and quickly using the [tablesorter|http://tablesorter.com/] JQuery plugin. Using the tablesorter plugin, tables are sorted in-place without requiring a partial or full page refresh. 
 
 h2. Paged and non-paged tables
 

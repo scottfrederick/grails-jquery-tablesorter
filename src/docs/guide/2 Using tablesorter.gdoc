@@ -1,0 +1,28 @@
+To make a table sortable, simply use the @<jqts:sortableTable>@ tag around the entire table contents (as you would normally use the HTML @<table>@ tag). The @id@ attribute is the only required attribute.
+
+In the body of the table, the tablesorter JQuery plugin requires that tables use the HTML @<thead>@ and @<tbody>@ enclosing tags for the header and body of the table. 
+
+Column headings must use @<th>@ or @<jqts:sortableColumn>@ tags. The @<jqts:sortableColumn>@ applies styling that is compatible with default Grails-generated CSS styles, but otherwise renders to @<th>@.
+
+{code}
+<jqts:sortableTable id="employees">
+  <thead>
+    <tr>
+      <jqts:sortableColumn title="${message(code: 'id.label')}"/>
+      <jqts:sortableColumn title="${message(code: 'firstName.label')}"/>
+      <jqts:sortableColumn title="${message(code: 'lastName.label')}"/>
+      <jqts:sortableColumn title="${message(code: 'dateOfBirth.label')}"/>
+    </tr>
+  </thead>
+  <tbody>
+    <g:each in="${employees}" var="employee">
+      <tr>
+        <td>${employee.id}</td>
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td><g:formatDate date="${employee.dateOfBirth}"/></td>
+      </tr>
+    </g:each>
+  </tbody>
+</table>
+{code}
